@@ -7,19 +7,19 @@ interface Props {
   fontColor?: FontColor;
 }
 
-const Title: React.FC<Props> = ({
+const Caption: React.FC<Props> = ({
   children,
-  fontColor = FontColor.Headline,
+  fontColor = FontColor.SubHeadline,
 }) => (
-  <h1
+  <h2
     css={css`
       color: ${fontColor};
-      font-size: ${FontSize.XLarge};
+      font-size: ${FontSize.Large};
       text-align: center;
     `}
   >
     {children}
-  </h1>
+  </h2>
 );
 
-export default Title;
+export default Caption;
