@@ -4,16 +4,14 @@ interface Props{
 }
 
 const CheckBox: React.FC<Props> = () => {
-  const [checked,setCheck]=React.useState(false);
-  const isChecked = () => setCheck(!checked);
+  const [checked,setChecked]=React.useState(false);
+  const onClick = () => setChecked(!checked);
   return (
     <input
     type="checkbox"
     checked={checked}
-    onChange={isChecked}
-    id="check"
+    onChange={onClick}
     value="check"
-    name="check"
     />
   )
 }
