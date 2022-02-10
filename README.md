@@ -29,14 +29,14 @@
 
 ## 使い方
 
-1. このリポジトリを個人アカウントの方にclone
-2. それをローカルにclone
-3. cd --
-4. yarn start
-5. 表示されればひとまず準備オッケー
-6. 見てくれる先輩を個人リポジトリに招待
+1. ローカルにこのリポジトリをクローン
+2. cd react-frontend-tutorial-v2
+3. yarn start
+4. ブラウザに表示されればひとまず準備オッケー
+6. main_[名前]のブランチを作る。以降はこれを自分のmainブランチにする
 7. issueごとにブランチを切る
-8. 出来たらそれをPullRequestして先輩に見てもらう
+8. 出来たらそれをmain_[名前]ブランチにPullRequestして先輩に見てもらう
+9. 良さそうだったらそれをマージする
 
 ### このチュートリアルについて
 
@@ -46,7 +46,15 @@
 - TypeScript
 - emotion
 
-を使います。
+を使います
+
+入門ページ
+- React
+  - https://sbfl.net/blog/2019/02/20/react-only-tutorial/
+- TypeScript
+  - https://www.tohoho-web.com/ex/typescript.html
+  - https://qiita.com/uhyo/items/e2fdef2d3236b9bfe74a
+
 
 
 
