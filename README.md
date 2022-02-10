@@ -25,7 +25,7 @@
 4. nodebrewを使ってnode,npmを入れる
 5. version確認
 6. yarn入れる
-10. VScodeの拡張機能入れる
+10. [このページ](https://qiita.com/newt0/items/b7810fb38c339ec5e4a7)などを参考に、必要そうなVScodeの拡張機能入れる
 
 ## 使い方
 
