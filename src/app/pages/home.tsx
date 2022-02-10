@@ -1,5 +1,6 @@
 import React from "react";
 import Caption from "../components/common/caption";
+import CheckBox from "../components/common/checkBox";
 import PlainText from "../components/common/plainText";
 import Title from "../components/common/title";
 import PageWrapper from "../components/layout/pageWrapper";
@@ -10,6 +11,7 @@ const Home: React.FC = () => (
     <Title>React Tutorial</Title>
     <Caption>Aiful</Caption>
     <PlainText>text</PlainText>
+    <CheckBox />
   </PageWrapper>
 );
 

@@ -1,6 +1,6 @@
 import { css } from "@emotion/react";
 import React from "react";
-import { FontColor, FontSize } from "../../view/helper/typographyHelper";
+import { FontColor} from "../../view/helper/typographyHelper";
 
 interface Props{
   fontColor?: FontColor;
