@@ -1,10 +1,9 @@
 import React from "react";
-
-interface Props{
+interface Props {
+  checked: boolean;
+  setChecked: React.Dispatch<React.SetStateAction<boolean>>
 }
-
-const CheckBox: React.FC<Props> = () => {
-  const [checked,setChecked]=React.useState(false);
+const CheckBox: React.FC<Props> = ({checked,setChecked}) => {
   const onClick = () => setChecked(!checked);
   return (
     <input
