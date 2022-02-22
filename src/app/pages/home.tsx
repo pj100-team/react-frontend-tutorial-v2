@@ -11,7 +11,7 @@ const Home: React.FC = () => (
     <Title>React Tutorial</Title>
     <Caption>Aiful</Caption>
     <PlainText>text</PlainText>
-    <CheckList width={100} />
+    <CheckList width={"100%"} />
   </PageWrapper>
 );
 
