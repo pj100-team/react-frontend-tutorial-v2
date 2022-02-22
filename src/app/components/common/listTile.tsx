@@ -9,14 +9,17 @@ import Title from "./title";
 interface Props {
   title:string;
   subtitle:string;
+  initCheck:boolean;
 }
 
 const ListTile: React.FC<Props> = ({
   title,
   subtitle,
+  initCheck,
 }) => {
-  const [checked,setChecked]=React.useState(false);
+  const [checked,setChecked]=React.useState(initCheck);
   return (<div css={css`
+  margin:10px;
   width: 200px;
   text-align: center;
   border: 2px solid #000000;
@@ -24,7 +27,7 @@ const ListTile: React.FC<Props> = ({
   padding: 10px;
   background-color: ${checked ? ElementColor.Main :ElementColor.Sub};
   overflow-wrap: break-word;
-  `}><Title>aaaaaaaaaaaaaaaaaaaa</Title><Caption>{subtitle}</Caption><CheckBox checked={checked} setChecked={setChecked}/></div>
+  `}><Title>{title}</Title><Caption>{subtitle}</Caption><CheckBox checked={checked} setChecked={setChecked}/></div>
   )
 }
 

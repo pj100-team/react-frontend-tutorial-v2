@@ -43,6 +43,7 @@
     ]
   },
   "devDependencies": {
-    "@emotion/babel-plugin": "^11.7.2"
+    "@emotion/babel-plugin": "^11.7.2",
+    "webpack-cli": "^4.9.2"
   }
 }

@@ -1,6 +1,6 @@
 import React from "react";
 import Caption from "../components/common/caption";
-import ListTile from "../components/common/listTile";
+import CheckList from "../components/common/checkList";
 import PlainText from "../components/common/plainText";
 import Title from "../components/common/title";
 import PageWrapper from "../components/layout/pageWrapper";
@@ -11,7 +11,7 @@ const Home: React.FC = () => (
     <Title>React Tutorial</Title>
     <Caption>Aiful</Caption>
     <PlainText>text</PlainText>
-    <ListTile title="title" subtitle="subtitle"/>
+    <CheckList width={100} />
   </PageWrapper>
 );
 
