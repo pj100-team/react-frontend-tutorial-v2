@@ -3,56 +3,31 @@ import { css } from "@emotion/react";
 import React, { useState } from "react";
 import { Pallet } from "../../view/helper/colorHelper";
 
-// interface DateMonthToday{
-//   date:number;
-//   isThisMonth:boolean;
-//   isToday:boolean;
-// }
+const today = new Date();
+type DayObj = {date:number,isThisMonth:boolean,isToday:boolean}
 
 const createDateArray = (showDate: Date) => {
-var year = showDate.getFullYear();
-var month = showDate.getMonth();
-var lastMonthEndDate = new Date(year, month, 0).getDate();
-var startDayOfWeek = new Date(year, month, 1).getDay();
-var firstDateOfPage = lastMonthEndDate - startDayOfWeek + 1;
-var endDateOfMonth = new Date(year, month + 1, 0).getDate();
-var row = Math.ceil((startDayOfWeek + endDateOfMonth) / 7);
+const year = showDate.getFullYear();
+const month = showDate.getMonth();
+const lastMonthEndDate = new Date(year, month, 0).getDate();
+const startDayOfWeek = new Date(year, month, 1).getDay();
+const firstDateOfPage = lastMonthEndDate - startDayOfWeek + 1;
+const endDateOfMonth = new Date(year, month + 1, 0).getDate();
+const row = Math.ceil((startDayOfWeek + endDateOfMonth) / 7);
 
 interface Week{
-Sunday: {date:number,isThisMonth:boolean,isToday:boolean};
-Monday: {date:number,isThisMonth:boolean,isToday:boolean};
-Tuesday: {date:number,isThisMonth:boolean,isToday:boolean};
-Wednesday: {date:number,isThisMonth:boolean,isToday:boolean};
-Thursday: {date:number,isThisMonth:boolean,isToday:boolean};
-Friday: {date:number,isThisMonth:boolean,isToday:boolean};
-Saturday: {date:number,isThisMonth:boolean,isToday:boolean};
+Sunday: DayObj;
+Monday: DayObj;
+Tuesday: DayObj;
+Wednesday: DayObj;
+Thursday: DayObj;
+Friday: DayObj;
+Saturday: DayObj;
 }
 
-function weekday(i:number,j:number):{date:number,isThisMonth:boolean,isToday:boolean,} {
-if(firstDateOfPage+7*i+j-lastMonthEndDate <= 0){
-  if(year == new Date().getFullYear() && month == new Date().getMonth()){
-    return {date:firstDateOfPage+7*i+j,isThisMonth:false,isToday:true};
-  }
-  else {
-    return {date:firstDateOfPage+7*i+j,isThisMonth:false,isToday:false};
-  }
-}
-else if(0 < firstDateOfPage+7*i+j-lastMonthEndDate && firstDateOfPage+7*i+j-lastMonthEndDate <= endDateOfMonth){
-  if(year == new Date().getFullYear() && month == new Date().getMonth()){
-    return {date:firstDateOfPage+7*i+j-lastMonthEndDate,isThisMonth:true,isToday:true};
-  }
-  else {
-    return {date:firstDateOfPage+7*i+j-lastMonthEndDate,isThisMonth:true,isToday:false};
-  }
-}
-else {
-  if(year == new Date().getFullYear() && month == new Date().getMonth()){
-    return {date:firstDateOfPage+7*i+j-lastMonthEndDate-endDateOfMonth,isThisMonth:false,isToday:true};
-  }
-  else {
-    return {date:firstDateOfPage+7*i+j-lastMonthEndDate-endDateOfMonth,isThisMonth:false,isToday:false};
-  }
-}
+function weekday(i:number,j:number):DayObj {
+  const aDay=new Date(year,month,firstDateOfPage+7*i+j-lastMonthEndDate);
+  return{date:aDay.getDate(),isThisMonth:0 < firstDateOfPage+7*i+j-lastMonthEndDate && firstDateOfPage+7*i+j-lastMonthEndDate <= endDateOfMonth,isToday:aDay.getFullYear() == today.getFullYear() && aDay.getMonth() == today.getMonth()}
 }
 
 const allWeek:Week[] = [...Array<number>(row)].map((_,i)=>(
@@ -68,14 +43,12 @@ return allWeek
 
 }
 
-const style = (day:{date:number,isThisMonth:boolean,isToday:boolean}) => (
+const dateCell = (day:DayObj) => (
   <td css={css`
   color:${day.isThisMonth ? Pallet.Black:Pallet.Gray};
-  background-color:${day.date === new Date().getDate() && day.isToday ? Pallet.Red:Pallet.White};
+  background-color:${day.date === today.getDate() && day.isToday ? Pallet.Red:Pallet.White};
   `}>{day.date}</td>
 )
-
-const today = new Date();
 
 const Calender : React.FC = () => {
   const [showDate, setShowDate] = useState(today);
@@ -92,13 +65,13 @@ const Calender : React.FC = () => {
         </tr>
         {createDateArray(showDate).map(Week =>
         <tr>
-          {style(Week.Sunday)}
-          {style(Week.Monday)}
-          {style(Week.Tuesday)}
-          {style(Week.Wednesday)}
-          {style(Week.Thursday)}
-          {style(Week.Friday)}
-          {style(Week.Saturday)}
+          {dateCell(Week.Sunday)}
+          {dateCell(Week.Monday)}
+          {dateCell(Week.Tuesday)}
+          {dateCell(Week.Wednesday)}
+          {dateCell(Week.Thursday)}
+          {dateCell(Week.Friday)}
+          {dateCell(Week.Saturday)}
         </tr>)
         }
       </table>
