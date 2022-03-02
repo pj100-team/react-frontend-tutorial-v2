@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import { Pallet } from "../../view/helper/colorHelper";
 
 const today = new Date();
-type DayObj = {date:number,isThisMonth:boolean,isToday:boolean}
+type DayObj = {date:number,isThisMonth:boolean,isTodayMonthYear:boolean}
 
 const createDateArray = (showDate: Date) => {
 const year = showDate.getFullYear();
@@ -27,7 +27,7 @@ Saturday: DayObj;
 
 function weekday(i:number,j:number):DayObj {
   const aDay=new Date(year,month,firstDateOfPage+7*i+j-lastMonthEndDate);
-  return{date:aDay.getDate(),isThisMonth:0 < firstDateOfPage+7*i+j-lastMonthEndDate && firstDateOfPage+7*i+j-lastMonthEndDate <= endDateOfMonth,isToday:aDay.getFullYear() == today.getFullYear() && aDay.getMonth() == today.getMonth()}
+  return{date:aDay.getDate(),isThisMonth:aDay.getFullYear() == showDate.getFullYear() && aDay.getMonth() == showDate.getMonth(),isTodayMonthYear:aDay.getFullYear() == today.getFullYear() && aDay.getMonth() == today.getMonth()}
 }
 
 const allWeek:Week[] = [...Array<number>(row)].map((_,i)=>(
@@ -46,7 +46,7 @@ return allWeek
 const dateCell = (day:DayObj) => (
   <td css={css`
   color:${day.isThisMonth ? Pallet.Black:Pallet.Gray};
-  background-color:${day.date === today.getDate() && day.isToday ? Pallet.Red:Pallet.White};
+  background-color:${day.date === today.getDate() && day.isTodayMonthYear ? Pallet.Red:Pallet.White};
   `}>{day.date}</td>
 )
 
