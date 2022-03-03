@@ -1,11 +1,13 @@
-import React from "react";
+import React from 'react'
+import Calender from '../components/common/calender';
 import PageWrapper from "../components/layout/pageWrapper";
 import { BackgroundColor } from "../view/helper/layoutHelper";
 
-const Home: React.FC = () => (
+
+const CalendarPage: React.FC = () => (
   <PageWrapper color={BackgroundColor.SubBackground}>
-    <h1>Home</h1>
+  <Calender />
   </PageWrapper>
 );
 
-export default Home;
+export default CalendarPage;
