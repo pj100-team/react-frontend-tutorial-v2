@@ -1,9 +1,9 @@
 /** @jsxImportSource @emotion/react */
 import React from "react";
-import PhoneNumber from "./components/common/phoneNumber";
+import StopWatch from "./components/common/stopWatch";
 
 const App: React.FC = () => (
-  <PhoneNumber />
+  <StopWatch />
 );
 
 export default App;
