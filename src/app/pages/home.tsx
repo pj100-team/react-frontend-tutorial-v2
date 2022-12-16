@@ -6,7 +6,7 @@ import { BackgroundColor } from "../view/helper/layoutHelper";
 
 const Home: React.FC = () => (
   <PageWrapper color={BackgroundColor.SubBackground}>
-    <Title>React Tutorial</Title>
+    <Title>React Tutorialaaaaa</Title>
     <Caption>Aiful</Caption>
   </PageWrapper>
 );
