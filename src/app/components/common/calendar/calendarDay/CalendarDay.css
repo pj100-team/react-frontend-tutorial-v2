@@ -1,0 +1,25 @@
+.square {
+  width: 60px;
+  border: solid 1px;
+  height: 4rem;
+}
+.week {
+  text-align: center;
+  height: 30px;
+  padding-top: 5px;
+}
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+  width: 450px;
+  margin: 60px auto;
+}
+p {
+  display: inline;
+}
+.otherDays p {
+  color: rgb(171, 171, 171);
+}
+.otherDays {
+  background-color: rgba(183, 183, 183, 0.277);
+}

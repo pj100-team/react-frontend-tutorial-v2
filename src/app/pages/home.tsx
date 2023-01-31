@@ -7,16 +7,16 @@ import { FontColor } from "../view/helper/typographyHelper";
 import PlainText from "../components/common/plainText";
 // import ListTile from "../components/common/ListTile";
 import CheckList from "../components/common/checkList";
-
-// import CheckBox from "../components/common/checkBox";
+import { CalendarHome } from "../components/common/calendar/calendarHome/CalendarHome";
 
 const Home: React.FC = () => (
   <PageWrapper color={BackgroundColor.SubBackground}>
     <Title>React Tutorial</Title>
     <Caption>Aiful</Caption>
-    <PlainText fontColor={FontColor.SubHeadline}>あああああああ</PlainText>
+    <CalendarHome />
+    {/* <PlainText fontColor={FontColor.SubHeadline}>あああああああ</PlainText> */}
     {/* <ListTile title={"タイトル"} subtitle={"サブタイトル"} /> */}
-    <CheckList />
+    {/* <CheckList /> */}
   </PageWrapper>
 );
 
