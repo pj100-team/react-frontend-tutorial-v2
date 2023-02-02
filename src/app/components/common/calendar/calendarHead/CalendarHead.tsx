@@ -32,12 +32,17 @@ export const CalenderHead = (props: calendaraHead) => {
   };
 
   return (
-    <div className="CalendarHead">
-      <button onClick={prevMonth}>＜</button>
-      <h3 style={{ fontSize: "22px", paddingTop: "35px" }}>
-        {isYear}年 {isMonth}月
-      </h3>
-      <button onClick={addMonth}>＞</button>
-    </div>
+    <>
+      <h2 style={{ fontSize: "20px", textAlign: "center", paddingTop: "20px" }}>
+        Calendar
+      </h2>
+      <div className="CalendarHead">
+        <button onClick={prevMonth}>＜</button>
+        <h3 style={{ fontSize: "22px", paddingTop: "35px" }}>
+          {isYear}年 {isMonth}月
+        </h3>
+        <button onClick={addMonth}>＞</button>
+      </div>
+    </>
   );
 };

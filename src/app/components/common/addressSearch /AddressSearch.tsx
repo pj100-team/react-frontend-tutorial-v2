@@ -2,9 +2,14 @@ import axios from "axios";
 import { useState } from "react";
 import "./AddressSearch.css";
 
+type Address = {
+  address1: string;
+  address2: string;
+  address3: string;
+};
 export const AddressSearch = () => {
   const [text, setText] = useState("");
-  const [address, setAddress] = useState({
+  const [address, setAddress] = useState<Address>({
     address1: "",
     address2: "",
     address3: "",
@@ -37,10 +42,9 @@ export const AddressSearch = () => {
   };
 
   return (
-    <div>
+    <div className="searchWrapper">
       <h2>AddressSearch</h2>
-      <div>
-        <div></div>
+      <div className="searchBlock">
         <span>郵便番号：</span>
         <input
           type="text"
