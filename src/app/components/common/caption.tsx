@@ -7,10 +7,11 @@ interface Props {
   fontColor?: FontColor;
 }
 
+// defining a component called Caption
 const Caption: React.FC<Props> = ({
   children,
   fontColor = FontColor.SubHeadline,
-}) => (
+}) => ( // defining a function. Below is HTML code describing how to display
   <h2
     css={css`
       color: ${fontColor};
