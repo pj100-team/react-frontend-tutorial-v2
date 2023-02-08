@@ -29,6 +29,7 @@ const CheckList: React.FC = () => {
       </div>
     );
   });
+
   return <>{itemList}</>;
 };
 export default CheckList;

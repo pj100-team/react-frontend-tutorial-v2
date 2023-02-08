@@ -3,7 +3,7 @@ import CheckBox from "./checkBox";
 // import { useState } from "react";
 interface Props {
   // key: number;
-  title: string;
+  title: number;
   subtitle: string;
   isActive: boolean;
   onClick: () => void;
@@ -22,13 +22,11 @@ const ListTile: React.FC<Props> = ({
         isActive
           ? {
               backgroundColor: "#ccc",
-              width: "200px",
-              margin: "30px",
+              width: "250px",
             }
           : {
               backgroundColor: "#eee",
-              width: "200px",
-              margin: "30px",
+              width: "250px",
             }
       }
     >

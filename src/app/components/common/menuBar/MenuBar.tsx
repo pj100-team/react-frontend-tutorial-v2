@@ -20,6 +20,9 @@ export const MenuBar = () => {
         <li>
           <Link to="StopWatch">StopWatch</Link>
         </li>
+        <li>
+          <Link to="TodoList">TodoList</Link>
+        </li>
       </ul>
     </nav>
   );
