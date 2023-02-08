@@ -21,7 +21,7 @@
   justify-content: space-around;
 }
 .todoButton {
-  margin: 0;
+  margin: 5px 0 0 0;
   width: 45px;
 }
 .todolist {

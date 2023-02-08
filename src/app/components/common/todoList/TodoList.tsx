@@ -2,46 +2,65 @@ import { useState } from "react";
 import ListTile from "../ListTile";
 import "./TodoList.css";
 
-interface Props {
-  title: number;
-  subtitle: string;
-  isActive: boolean;
-  onClick: () => void;
-  onChange: () => void;
-}
+// interface Props {
+//   title: number;
+//   subtitle: string;
+//   isActive: boolean;
+//   onClick: () => void;
+//   onChange: () => void;
+// }
 
 interface Todo {
-  title: number;
+  //   title: number;
   subtitle: string;
   isActive: boolean;
 }
 
-export const TodoList: React.FC<Props> = ({
-  title,
-  subtitle,
-  isActive,
-  onClick,
-  onChange,
-}) => {
-  const [todo, setTodo] = useState<string>("");
-  const [todos, setTodos] = useState([]);
+export const TodoList: React.FC = () => {
+  const [todo, setTodo] = useState("");
+  const [todos, setTodos] = useState<Todo[]>([]);
+  // const [isActive, setIsActive] = useState(false);
 
-  const newTodo: Todo = {
-    title: todos.length,
+  const inputText = (e: any) => {
+    setTodo(e.target.value);
+  };
+
+  let newTodo: Todo = {
+    // title: todos.length,
     subtitle: todo,
     isActive: false,
   };
 
-  const inoutText = (e: any) => {
-    setTodo(e.target.value);
-  };
-
+  // タスクを追加する
   const onClickAdd = () => {
     if (todo !== "") {
-      setTodos([newTodo, ...todos]);
+      setTodos([...todos, newTodo]);
       setTodo("");
       console.log(todos);
     }
+  };
+
+  // タスクを完了にする
+  const onClickComplete = (i: number) => {
+    console.log(i);
+    const completeTodo = todos.map((todo, index) =>
+      index === i ? { ...todo, isActive: !todo.isActive } : { ...todo }
+    );
+    setTodos(completeTodo);
+  };
+
+  // タスクを削除
+  const onClickDelete = (i: number) => {
+    console.log(i);
+    const Todos = [...todos];
+    Todos.splice(i, 1);
+    setTodos(Todos);
+  };
+
+  // 完了タスクを全て削除
+  const onClickCompletedDelete = () => {
+    const Todos = todos.filter((todo) => todo.isActive === false);
+    setTodos(Todos);
   };
 
   return (
@@ -52,20 +71,24 @@ export const TodoList: React.FC<Props> = ({
           className="todoInput"
           type="text"
           value={todo}
-          onChange={inoutText}
+          onChange={inputText}
         />
         <button onClick={onClickAdd}>追加</button>
+        <button onClick={onClickCompletedDelete}>完了タスク一括削除</button>
       </div>
       <div>
         <ul className="ulList">
-          {todos.map((todo) => (
-            <div className="todolist">
+          {todos.map((todo, i) => (
+            <div key={i} className="todolist">
               <ListTile
-                title={todo.title}
-                subtitle={todo}
-                isActive={isActive}
+                // title={todo.title}
+                subtitle={todo.subtitle}
+                isActive={todo.isActive}
+                onClick={() => onClickComplete(i)}
               />
-              <button className="todoButton">削除</button>
+              <button onClick={() => onClickDelete(i)} className="todoButton">
+                削除
+              </button>
             </div>
           ))}
         </ul>
