@@ -5,7 +5,8 @@ import PageWrapper from "../components/layout/pageWrapper";
 import { BackgroundColor } from "../view/helper/layoutHelper";
 import { FontColor } from "../view/helper/typographyHelper";
 import PlainText from "../components/common/plainText";
-import ListTile from "../components/common/ListTile";
+// import ListTile from "../components/common/ListTile";
+import CheckList from "../components/common/checkList";
 
 // import CheckBox from "../components/common/checkBox";
 
@@ -14,7 +15,8 @@ const Home: React.FC = () => (
     <Title>React Tutorial</Title>
     <Caption>Aiful</Caption>
     <PlainText fontColor={FontColor.SubHeadline}>あああああああ</PlainText>
-    <ListTile title={"タイトル"} subtitle={"サブタイトル"} />
+    {/* <ListTile title={"タイトル"} subtitle={"サブタイトル"} /> */}
+    <CheckList />
   </PageWrapper>
 );
 

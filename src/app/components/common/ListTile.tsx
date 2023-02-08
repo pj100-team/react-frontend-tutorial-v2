@@ -1,30 +1,44 @@
 // import { css } from "@emotion/react";
 import CheckBox from "./checkBox";
-import { useState } from "react";
-// import { BackgroundColor } from "../view/helper/layoutHelper";
-interface props {
+// import { useState } from "react";
+interface Props {
+  // key: number;
   title: string;
   subtitle: string;
+  isActive: boolean;
+  onClick: () => void;
+  onChange: () => void;
 }
-const ListTile: React.FC<props> = (props) => {
-  const [isChecked, setIsChecked] = useState(false);
+const ListTile: React.FC<Props> = ({
+  title,
+  subtitle,
+  isActive,
+  onClick,
+  onChange,
+}) => {
   return (
     <div
       style={
-        isChecked
+        isActive
           ? {
               backgroundColor: "#ccc",
               width: "200px",
+              margin: "30px",
             }
           : {
               backgroundColor: "#eee",
               width: "200px",
+              margin: "30px",
             }
       }
     >
-      <h2>{props.title}</h2>
-      <h3>{props.subtitle}</h3>
-      <CheckBox isChecked={isChecked} setIsChecked={setIsChecked} />
+      <h2>{title}</h2>
+      <h3>{subtitle}</h3>
+      <CheckBox
+        isChecked={isActive}
+        setIsChecked={onClick}
+        onChange={onChange}
+      />
     </div>
   );
 };
