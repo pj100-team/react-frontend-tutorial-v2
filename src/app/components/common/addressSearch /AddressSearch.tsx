@@ -7,7 +7,7 @@ type Address = {
   address2: string;
   address3: string;
 };
-export const AddressSearch = () => {
+export const AddressSearch: React.FC = () => {
   const [text, setText] = useState("");
   const [address, setAddress] = useState<Address>({
     address1: "",

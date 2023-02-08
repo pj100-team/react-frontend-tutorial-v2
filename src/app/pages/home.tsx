@@ -17,7 +17,6 @@ const Home: React.FC = () => (
   <PageWrapper color={BackgroundColor.SubBackground}>
     <Title>React Tutorial</Title>
     <Caption>Aiful</Caption>
-    <PhoneNumber />
   </PageWrapper>
 );
 

@@ -14,6 +14,12 @@ export const MenuBar = () => {
         <li>
           <Link to="AddressSearch">AddressSearch</Link>
         </li>
+        <li>
+          <Link to="PhoneNumber">PhoneNumber</Link>
+        </li>
+        <li>
+          <Link to="StopWatch">StopWatch</Link>
+        </li>
       </ul>
     </nav>
   );
