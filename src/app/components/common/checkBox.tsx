@@ -5,8 +5,10 @@ interface Props {
 }
 
 const CheckBox: React.FC<Props> = ({ isChecked, setIsChecked, onChange }) => {
-  // const check = () => setIsChecked(!isChecked);
+<<<<<<< HEAD
+=======
 
+>>>>>>> main_nagaoka
   return (
     <>
       <input

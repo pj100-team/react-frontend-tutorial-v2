@@ -6,6 +6,7 @@ import { CalendarPage } from "./pages/CalendarPage";
 import Home from "./pages/home";
 import { PhoneNumberPage } from "./pages/PhoneNumberPage";
 import { StopWatchPage } from "./pages/StopWatchPage";
+import { TodoListPage } from "./pages/TodoListPage";
 
 const App: React.FC = () => (
   <>
@@ -16,6 +17,7 @@ const App: React.FC = () => (
       <Route path="/AddressSearch" element={<AddressSearchPage />} />
       <Route path="/PhoneNumber" element={<PhoneNumberPage />} />
       <Route path="/StopWatch" element={<StopWatchPage />} />
+      <Route path="/TodoList" element={<TodoListPage />} />
     </Routes>
   </>
 );

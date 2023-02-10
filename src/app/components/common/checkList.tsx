@@ -19,7 +19,7 @@ const CheckList: React.FC = () => {
     return (
       <div key={item.id}>
         <ListTile
-          title={item.name}
+          // title={item.name}
           subtitle={item.id.toString()}
           isActive={item.isActive}
           onClick={() => checked(i)}
@@ -29,6 +29,7 @@ const CheckList: React.FC = () => {
       </div>
     );
   });
+
   return <>{itemList}</>;
 };
 export default CheckList;

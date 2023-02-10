@@ -3,36 +3,36 @@ import CheckBox from "./checkBox";
 // import { useState } from "react";
 interface Props {
   // key: number;
-  title: string;
+  // title: number;
   subtitle: string;
   isActive: boolean;
   onClick: () => void;
-  onChange: () => void;
+  onChange?: () => void;
 }
 const ListTile: React.FC<Props> = ({
-  title,
+  // title,
   subtitle,
   isActive,
   onClick,
-  onChange,
+  onChange = () => {},
 }) => {
   return (
     <div
       style={
         isActive
           ? {
-              backgroundColor: "#ccc",
-              width: "200px",
-              margin: "30px",
+              backgroundColor: "#aaa",
+              width: "250px",
+              border: "solid 1px #ccc",
             }
           : {
-              backgroundColor: "#eee",
-              width: "200px",
-              margin: "30px",
+              backgroundColor: "#fff",
+              width: "250px",
+              border: "solid 1px #ccc",
             }
       }
     >
-      <h2>{title}</h2>
+      {/* <h2>{title}</h2> */}
       <h3>{subtitle}</h3>
       <CheckBox
         isChecked={isActive}
