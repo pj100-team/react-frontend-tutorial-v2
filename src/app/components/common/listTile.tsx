@@ -1,7 +1,10 @@
+/** @jsxImportSource @emotion/react */
 import React from "react";
+import { css } from "@emotion/react";
 import CheckBox from "../common/checkBox";
 import Title from "../common/title";
 import Caption from "../common/caption";
+import { ElementColor } from "../../view/helper/layoutHelper";
 
 interface Props {
     title: string;
@@ -18,19 +21,17 @@ const ListTile: React.FC<Props> = ({
 }) => {
     
     return (
-        <div>
-            <div
-                style={{
-                    border: 'solid 2px #329eff',
-                    borderRadius: '5px',
-                    width: '200px',
-                    backgroundColor: checked ? 'salmon' : '',
-                    overflowWrap: 'break-word'
-                }}>
-                <Title>{title}</Title>
-                <p style={{ textAlign: "right" }}><CheckBox checked={checked} setChecked={setChecked}></CheckBox></p>
-                <Caption>{subtitle}</Caption>
-            </div>
+        <div
+        css={css`
+                    border: solid 2px #329eff;
+                    border-radius: 5px;
+                    width: 200px;
+                    background-color: ${checked ? ElementColor.Sub : ElementColor.Main};
+                    overflow-wrap: break-word;
+            `}>
+            <div css={css`margin-right: 100px;`}><Title>{title}</Title></div>
+            <p css={css`text-align: right; `}><CheckBox checked={checked} setChecked={setChecked}></CheckBox></p>
+            <div css={css`margin-right: 100px;`}><Caption>{subtitle}</Caption></div>
         </div>
     )
 }
