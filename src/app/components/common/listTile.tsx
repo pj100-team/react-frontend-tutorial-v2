@@ -5,22 +5,19 @@ import CheckBox from "../common/checkBox";
 import ListTileTitle from "../common/listTileTitle";
 import { ElementColor } from "../../view/helper/layoutHelper";
 import PlainText from "./plainText";
-import { FontColor } from "../../view/helper/typographyHelper";
 
 interface Props {
     title: string;
     subtitle: string;
-    checked: boolean;
-    setChecked: React.Dispatch<React.SetStateAction<boolean>>;
+    initialCheck: boolean;
 }
 
 const ListTile: React.FC<Props> = ({
     title,
     subtitle,
-    checked,
-    setChecked
+    initialCheck,
 }) => {
-    
+    const [checked, setChecked] = React.useState(initialCheck)
     return (
         <div
         css={css`
