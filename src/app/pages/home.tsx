@@ -5,6 +5,7 @@ import PlainText from "../components/common/plainText";
 import CheckBox from "../components/common/checkBox";
 import ListTile from "../components/common/listTile";
 import CheckList from "../components/common/checkList";
+import Calendar from "../components/common/calendar";
 import PageWrapper from "../components/layout/pageWrapper";
 import { BackgroundColor } from "../view/helper/layoutHelper";
 import { FontColor, FontSize } from "../view/helper/typographyHelper";
@@ -19,6 +20,7 @@ const Home: React.FC = () => (
       {/* <ListTile title="titlelonglllllisiisisisijdlfsdfsdfs" subtitle="subtitle"/> */}
       <CheckList ListTileDatas={Items}/>
     </div>
+    <Calendar/>
   </PageWrapper>
 );
 
