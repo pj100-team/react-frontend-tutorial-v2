@@ -18,3 +18,10 @@ export enum ElementColor {
   Sub = Pallet.Secondary,
   White = Pallet.White,
 }
+
+export enum ListTileColor {
+  Finished = Pallet.LightGreen,
+  FrameFinished = Pallet.Green,
+  Unfinished = Pallet.LightRed,
+  FrameUnfinished = Pallet.Red,
+}

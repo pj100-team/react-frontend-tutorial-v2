@@ -9,4 +9,9 @@ export enum Pallet {
   Red = "#f25042",
   Blue = "#597ef7",
   Gray = "#d9d9d9",
+
+  LightGreen = "#DDFFDD",
+  Green = "#4db56a",
+  LightRed = "#FADBDA",
+  DarkGray = "#808080",
 }

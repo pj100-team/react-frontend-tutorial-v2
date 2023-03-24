@@ -14,9 +14,16 @@ export enum FontColor {
   SubHeadline = Pallet.PrimaryLight,
   Paragraph = Pallet.PrimaryLight,
   WhiteText = Pallet.White,
+  GrayText = Pallet.Gray,
+  DarkGrayText = Pallet.DarkGray,
   BlackText = Pallet.Black,
   Link = Pallet.Blue,
   Info = Pallet.Gray,
   warn = Pallet.Red,
   Error = Pallet.Red,
+}
+
+export enum CheckBoxColor {
+  Finished = Pallet.Green,
+  Unfinished = Pallet.Red,
 }
