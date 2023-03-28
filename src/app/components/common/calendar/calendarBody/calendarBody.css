@@ -1,0 +1,49 @@
+.CalendarBody {
+    display:flex;
+    width: 100%;
+}
+
+.DaysTable {
+    width: 100%;
+    table-layout: fixed;
+    padding: auto;
+}
+
+td {
+    text-align: center;
+}
+
+
+.PrevMonth.-Weekday, .NextMonth.-Weekday{
+    color: #808080;
+}
+
+.PrevMonth.-Sunday, .NextMonth.-Sunday{
+    color: #FA817D;
+}
+
+.PrevMonth.-Saturday, .NextMonth.-Saturday{
+    color: #7DB7FA
+    
+}
+
+    
+.CurrMonth.-Weekday{
+    color: #000000;
+}
+
+.CurrMonth.-Sunday{
+    color: #FA0800;
+}
+
+.CurrMonth.-Saturday{
+    color: #0075FA;
+}
+    
+.-Today {
+    background-color: limegreen;
+}
+
+/* .-Selected {
+    background-color: green;
+} */
