@@ -1,0 +1,21 @@
+.AddressSearch{
+    width : 100%;
+}
+
+.Label {
+    width: 30%;
+    text-align: center;
+    margin: 1em;
+}
+
+.Colon {
+    width: 5%;
+    text-align: center;
+    margin: 1em;
+}
+
+.Form {
+    width: 65%;
+    text-align: center;
+    margin: 1em;
+}

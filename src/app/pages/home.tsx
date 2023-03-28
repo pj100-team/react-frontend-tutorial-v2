@@ -6,6 +6,7 @@ import CheckBox from "../components/common/checkBox";
 import ListTile from "../components/common/listTile";
 import CheckList from "../components/common/checkList";
 import Calendar from "../components/common/calendar/calendar";
+import AddressSearch from "../components/common/addressSearch/addressSearch";
 import PageWrapper from "../components/layout/pageWrapper";
 import { BackgroundColor } from "../view/helper/layoutHelper";
 import { FontColor, FontSize } from "../view/helper/typographyHelper";
@@ -21,6 +22,7 @@ const Home: React.FC = () => (
       <CheckList ListTileDatas={Items}/>
     </div>
     <Calendar/>
+    <AddressSearch/>
   </PageWrapper>
 );
 

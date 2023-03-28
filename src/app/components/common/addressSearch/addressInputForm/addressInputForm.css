@@ -1,0 +1,8 @@
+.AddressInputForm{
+    width : 100%;
+    display: flex;
+}
+
+.AddressInput {
+    width : 80%;
+}

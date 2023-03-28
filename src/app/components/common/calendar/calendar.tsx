@@ -1,10 +1,6 @@
 /** @jsxImportSource @emotion/react */
-import { css } from "@emotion/react";
 import React, { useState, Dispatch, SetStateAction } from "react";
-import { FontColor, FontSize } from "../../../view/helper/typographyHelper";
 import dayjs from "dayjs";
-import {weekdaysShort as weekdays} from 'dayjs/locale/ja';
-import parse from 'html-react-parser';
 import CalendarHead from './calendarHead/calendarHead';
 import CalendarBody from './calendarBody/calendarBody';
 import "./calendar.css";
