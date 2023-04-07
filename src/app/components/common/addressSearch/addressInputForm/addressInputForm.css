@@ -6,3 +6,8 @@
 .AddressInput {
     width : 80%;
 }
+
+.SentButton {
+    text-align : center;
+    margin : 1rem;
+}
