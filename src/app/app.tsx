@@ -5,6 +5,7 @@ import CalendarPage from "./pages/calendarPage";
 import CheckListPage from "./pages/checkListPage";
 import AddressSearchPage from "./pages/addressSearchPage";
 import NotFoundPage from "./pages/notFoundPage";
+import PhoneNumberPage from "./pages/phoneNumberPage";
 
 const App: React.FC = () => (
   <>
@@ -12,6 +13,7 @@ const App: React.FC = () => (
       <Route path="/" element={<Home />} />
       <Route path="/calendar" element={<CalendarPage />} />
       <Route path="/checkList" element={<CheckListPage />} />
+      <Route path="/phoneNumber" element={<PhoneNumberPage />} />
       <Route path="/addressSearch" element={<AddressSearchPage />} />
       <Route path="/*" element={<NotFoundPage />} />
     </Routes>
