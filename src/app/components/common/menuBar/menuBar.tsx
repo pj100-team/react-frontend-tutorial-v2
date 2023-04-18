@@ -17,6 +17,7 @@ return (
         <li><Link to="/calendar">Calendar</Link></li>
         <li><Link to="/checkList">CheckList</Link></li>
         <li><Link to="/addressSearch">AddressSearch</Link></li>
+        <li><Link to="/phoneNumber">PhoneNumber</Link></li>
     </ul>
   </nav>
 )};
