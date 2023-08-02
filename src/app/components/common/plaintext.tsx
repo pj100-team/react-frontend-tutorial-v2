@@ -10,7 +10,7 @@ export const Plaintext: React.FC<Props> = ({
   children,
   fontColor = FontColor.Paragraph,
 }) => (
-  <h3
+  <p
     css={css`
       color: ${fontColor};
       font-size: ${FontSize.Medium};
@@ -19,7 +19,7 @@ export const Plaintext: React.FC<Props> = ({
     `}
   >
     {children}
-  </h3>
+  </p>
 );
 
 export default Plaintext;
