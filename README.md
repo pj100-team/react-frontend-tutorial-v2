@@ -22,7 +22,7 @@
 1. Visual Studio Codeを入れる(多分入ってます)
 2. node,npmを消す
 3. nodebrewを入れる
-4. nodebrewを使ってnode,npmを入れる
+4. [volta](https://volta.sh/)を使ってnode,npmを入れる
 5. version確認
 6. yarn入れる
 10. [このページ](https://qiita.com/newt0/items/b7810fb38c339ec5e4a7)などを参考に、必要そうなVScodeの拡張機能入れる
