@@ -7,8 +7,8 @@ import Caption from "./caption";
 import { BackgroundColor } from "../../view/helper/layoutHelper";
 
 interface Props {
-    title: string
-    subtitle: string
+    title: string;
+    subtitle: string;
 }
 
 const ListTile: React.FC<Props> = ({
@@ -25,7 +25,7 @@ const ListTile: React.FC<Props> = ({
                 padding: 15px;
                 text-align: center;
                 overflow-wrap: break-word;
-                backgroundColor: ${isChecked ? BackgroundColor.Background : BackgroundColor.SubBackground};
+                background-color: ${isChecked ? BackgroundColor.Background : BackgroundColor.SubBackground};
             `}>
             <Title>{title}</Title>
             <Checkbox isChecked={isChecked} setChecked={setChecked}/>
