@@ -1,7 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 
-const Checkbox = () => {
-  const [isChecked, setChecked] = useState(false);
+interface Props{
+  isChecked: boolean;
+  setChecked: React.Dispatch<React.SetStateAction<boolean>>
+}
+
+const Checkbox: React.FC<Props> = ({isChecked,setChecked}) => {
   const handleClick = () => {
     setChecked(!isChecked);
   };
