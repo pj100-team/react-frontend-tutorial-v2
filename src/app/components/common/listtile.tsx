@@ -9,18 +9,20 @@ import { BackgroundColor } from "../../view/helper/layoutHelper";
 interface Props {
     title: string;
     subtitle: string;
+    initialChecked: boolean;
 }
 
 const ListTile: React.FC<Props> = ({
     title,
     subtitle,
+    initialChecked,
 }) => {
-    const [isChecked,setChecked]=React.useState(false);
+    const [isChecked,setChecked]=React.useState(initialChecked);
     return(
         <div
             css={css`
                 width: 200px;
-                margin: 0;
+                margin: 5px;
                 border: dashed 1px black;
                 padding: 15px;
                 text-align: center;
