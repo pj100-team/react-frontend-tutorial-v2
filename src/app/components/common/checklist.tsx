@@ -2,31 +2,33 @@
 import React from "react";
 import { css } from "@emotion/react";
 import { Items } from "../../../mock/data/items";
-import Title from "./title";
-import Caption from "./caption";
+import ListTile from "./listtile";
 
 interface Props {
-    width: number;
+    width: string;
 }
 
 const CheckList: React.FC<Props> = ({
     width,
 }) => {
-    const [isChecked,setChecked]=React.useState(false);
     return(
-       <ul
+       <div
         css={css`
-        display: flex;
-        list-style: none;
-        margin: 0;
-        border: dashed 1px black;
-        padding: 15px;
-        text-align: center;
+            width: ${width};
+            display: flex;
+            list-style: none;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
         `}>
-            <i>
-                <Title>hi</Title>
-            </i>
-       </ul>
+            {Items.map((item) => (
+                <ListTile
+                    title={item.name}
+                    subtitle={item.id.toString()}
+                    initialChecked={item.isActive}
+                />
+            ))}
+       </div>
     );
 
 }
