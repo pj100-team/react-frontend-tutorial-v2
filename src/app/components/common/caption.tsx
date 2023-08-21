@@ -19,6 +19,7 @@ const Caption: React.FC<Props> = ({
     `}
   >
     {children}
+    
   </h2>
 );
 
