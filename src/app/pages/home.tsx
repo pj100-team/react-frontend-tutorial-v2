@@ -7,14 +7,13 @@ import Plaintext from "../components/common/plaintext";
 import { FontColor } from "../view/helper/typographyHelper";
 import ListTile from "../components/common/listtile";
 import CheckList from "../components/common/checklist";
+import Calendar from "../components/common/calendar";
 
 const Home: React.FC = () => (
   <PageWrapper color={BackgroundColor.SubBackground}>
     <Title>React Tutorial</Title>
     <Caption>Aiful</Caption>
-    <Plaintext fontColor={FontColor.Paragraph}>hi</Plaintext>
-    <ListTile title="I am title" subtitle="I am subtitle" initialChecked={true} />
-    <CheckList width="100%"/>
+    <Calendar/>
   </PageWrapper>
 );
 

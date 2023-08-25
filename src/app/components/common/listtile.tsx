@@ -9,15 +9,15 @@ import { BackgroundColor } from "../../view/helper/layoutHelper";
 interface Props {
     title: string;
     subtitle: string;
-    initialChecked: boolean;
+    //initialChecked: boolean;
 }
 
 const ListTile: React.FC<Props> = ({
     title,
     subtitle,
-    initialChecked,
+    //initialChecked,
 }) => {
-    const [isChecked,setChecked]=React.useState(initialChecked);
+    //const [isChecked,setChecked]=React.useState(initialChecked);
     return(
         <div
             css={css`
@@ -27,10 +27,11 @@ const ListTile: React.FC<Props> = ({
                 padding: 15px;
                 text-align: center;
                 overflow-wrap: break-word;
-                background-color: ${isChecked ? BackgroundColor.Background : BackgroundColor.SubBackground};
+                };
             `}>
             <Title>{title}</Title>
-            <Checkbox isChecked={isChecked} setChecked={setChecked}/>
+            {//<Checkbox isChecked={isChecked} setChecked={setChecked}/>
+            }
             <Caption>{subtitle}</Caption>
         </div>
     );
