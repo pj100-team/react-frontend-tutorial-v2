@@ -28,7 +28,6 @@ const ListTile: React.FC<Props> = ({
                 text-align: center;
                 overflow-wrap: break-word;
                 background-color: ${isChecked ? BackgroundColor.Background : BackgroundColor.SubBackground};
-                };
             `}>
             <Title>{title}</Title>
             <Checkbox isChecked={isChecked} setChecked={setChecked}/>
