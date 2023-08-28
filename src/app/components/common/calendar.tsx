@@ -11,7 +11,6 @@ const Calendar = ( ) => {
     const [thisMonth, setThisMonth] = useState(new Date().getMonth());
 
     return(
-        <>
         <div className="calendar">
             <div className="calendar-header">
                 <div className="title">
@@ -36,7 +35,6 @@ const Calendar = ( ) => {
             </div>
             <CalendarDays currentMonthNumber={thisMonth}/>
         </div>
-        </>
   )
 };
 
