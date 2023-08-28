@@ -25,7 +25,7 @@ const CheckList: React.FC<Props> = ({
                 <ListTile
                     title={item.name}
                     subtitle={item.id.toString()}
-                    //initialChecked={item.isActive}
+                    initialChecked={item.isActive}
                 />
             ))}
        </div>

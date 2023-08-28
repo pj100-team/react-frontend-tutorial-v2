@@ -6,7 +6,6 @@ interface Props{
 
 const CalendarDays: React.FC<Props> = ({currentMonthNumber}) => {
     const today = new Date();
-    //const currentMonth = today.toLocaleString([], {month: 'long',});
     const firstDay = new Date(today.getFullYear(), currentMonthNumber, 1 );
     const weekdayFirstDay = firstDay.getDay()
     let daysOfTheMonth = [];
