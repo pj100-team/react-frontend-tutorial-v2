@@ -13,4 +13,4 @@ const Home: React.FC = () => (
   </PageWrapper>
 );
 
-export default Home;
+export default Home
