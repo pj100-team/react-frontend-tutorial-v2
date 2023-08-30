@@ -1,7 +1,5 @@
 .error-message {
-    display: none;
     color: red;
-    border: red solid 3px;
 }
 
 label:has(input:invalid) .error-message {
