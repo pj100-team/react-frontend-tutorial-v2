@@ -1,0 +1,17 @@
+.error-message {
+    color: red;
+}
+
+label:has(input:invalid) .error-message {
+    display: block;
+}
+
+.results {
+  line-height: 26pt;
+}
+
+.title{
+  color: #716040;
+  font-size: large;
+  line-height: 26pt;
+}
