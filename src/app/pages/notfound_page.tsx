@@ -1,5 +1,5 @@
-import PageWrapper from "../../layout/pageWrapper";
-import { BackgroundColor } from "../../../view/helper/layoutHelper";
+import PageWrapper from "../components/layout/pageWrapper";
+import { BackgroundColor } from "../view/helper/layoutHelper";
 
 const NotFoundPage = () => (
     <PageWrapper color={BackgroundColor.SubBackground}>

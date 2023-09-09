@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
+import { css } from "@emotion/react";
 import { useState } from "react";
 import axios from "axios";
-import "./addresssearch.css"
 
 interface AddressInformation {
     address1:"",
@@ -67,7 +67,15 @@ const AddressSearch = () => {
 
     return(
         <div>
-            <div className="title">Address Search</div>
+            <div
+                css={css`
+                    color: #716040;
+                    font-size: x-large;
+                    line-height: 26pt;
+                `}
+            >
+                Address Search
+            </div>
             <input
                 type = "text"
                 value={text}
@@ -80,7 +88,7 @@ const AddressSearch = () => {
             ) : (
                 <>
                     {!isError ? (
-                        <div className="results">
+                        <div css={css`line-height: 26pt;`}>
                             <p>都道府県：{address.address1}</p>
                             <p>市区町村：{address.address2}</p>
                             <p>町域：{address.address3}</p>
@@ -91,7 +99,7 @@ const AddressSearch = () => {
                             <p>郵便番号：{address.zipcode}</p>
                         </div>
                     ) : (
-                        <p className="error-message">正しい郵便番号を入力してください</p>
+                        <p css={css`color: red;`}>正しい郵便番号を入力してください</p>
                     )}
                 </>
             )}
