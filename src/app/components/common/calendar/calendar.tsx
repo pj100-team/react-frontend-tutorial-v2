@@ -8,11 +8,12 @@ const Calendar = ( ) => {
     const months = ['January', 'February', 'March', 'April', 'May', 'June',
     'July', 'August', 'September', 'October', 'November', 'December'];
 
-    const [thisMonth, setThisMonth] = useState(new Date().getMonth());
+    const [targetYearMonth, setTargetYearMonth] = useState({year:new Date().getFullYear(), month: new Date().getMonth()});
 
     return(
         <div
             css={css`
+                --WhiteBlue: #dfebeb;
                 width: 900px;
                 height: 600px;
                 display: flex;
@@ -41,7 +42,7 @@ const Calendar = ( ) => {
                         margin: auto 100px;
                     `}
                 >
-                    <h2>Calendar {new Date().getFullYear()+~~(thisMonth/12)}</h2>
+                    <h2>Calendar {targetYearMonth.year}</h2>
                 </div>
                 <div
                     css={css`
@@ -52,30 +53,52 @@ const Calendar = ( ) => {
                     `}
                 >
                     <button
-                        onClick={() => setThisMonth(thisMonth-1)}
+                        onClick={() => setTargetYearMonth(pre => {
+                            if(pre.month === 0){
+                                return {
+                                    month: 11,
+                                    year: pre.year - 1
+                                }
+                            }
+                            return {
+                                ...pre,
+                                month: pre.month - 1
+                            }
+                        })}
                         css={css`
                             margin: auto;
                             display: flex;
                             align-items: center;
                             justify-content: center;
                             box-sizing: border-box;
-                            background-color: #dfebeb;
+                            background-color: var(--WhiteBlue);
                         `}
                     >
                         <span>
                             prev
                         </span>
                     </button>
-                    <p>{months[thisMonth%12]}</p>
+                    <p>{months[targetYearMonth.month]}</p>
                     <button
-                        onClick={() => setThisMonth(thisMonth+1)}
+                        onClick={() => setTargetYearMonth(pre => {
+                            if(pre.month === 11){
+                                return {
+                                    month: 0,
+                                    year: pre.year + 1
+                                }
+                            }
+                            return {
+                                ...pre,
+                                month: pre.month + 1
+                            }
+                        })}
                         css={css`
                             margin: auto;
                             display: flex;
                             align-items: center;
                             justify-content: center;
                             box-sizing: border-box;
-                            background-color: #dfebeb;
+                            background-color: var(--WhiteBlue);
                         `}
                     >
                         <span>
@@ -104,7 +127,7 @@ const Calendar = ( ) => {
                     {weekdays.map((weekday) => {return <th>{weekday}</th>})}
                 </div>
             </div>
-            <CalendarDays currentMonthNumber={thisMonth%12}/>
+            <CalendarDays currentMonthNumber={targetYearMonth.month}/>
         </div>
   )
 };
