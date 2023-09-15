@@ -1,3 +1,5 @@
+/** @jsxImportSource @emotion/react */
+import { css } from "@emotion/react";
 import React from "react";
 
 interface Props{
@@ -31,11 +33,36 @@ const CalendarDays: React.FC<Props> = ({currentMonthNumber}) => {
     }
 
     return (
-        <div className="table-content">
+        <div
+            css={css`
+                width: 100%;
+                flex-grow: 1;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                box-sizing: border-box;
+            `}
+        >
             {daysOfTheMonth.map((day) => {
                 return(
-                    <div className={"calendar-day" + (day.currentMonth ? " current":"") + (day.selected ? " selected":"")}>
-                        <p>{day.number}</p>
+                    <div
+                        css={css`
+                            width: 125px;
+                            height: 75px;
+                            border: 1px solid #a6a6a6;
+                            color: #a6a6a6
+                        `}
+                    >
+                        <div css= {(day.currentMonth ? css`color: #000000` : "")}>
+                            <div css= {(day.selected ?
+                                css`
+                                    color: #cc0000;
+                                    font-weight: bold;
+                                `
+                            : "")}>
+                                <p>{day.number}</p>
+                            </div>
+                        </div>
                     </div>
                 )
             })}
