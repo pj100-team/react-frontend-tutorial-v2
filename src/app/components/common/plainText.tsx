@@ -4,10 +4,10 @@ import React from "react";
 import { FontColor, FontSize } from "../../view/helper/typographyHelper";
 
 interface Props {
-  fontColor?: FontColor;
+  fontColor?: FontColor; // ? marks the parameter as optional
 }
 
-const PlainText: React.FC<Props> = ({
+const PlainText: React.FC<Props> = ({ // arrow function components
   children,
   fontColor = FontColor.Paragraph,
 }) => (
