@@ -8,7 +8,7 @@ import Title from "../components/common/title";
 import PageWrapper from "../components/layout/pageWrapper";
 import { BackgroundColor } from "../view/helper/layoutHelper";
 import { FontColor } from "../view/helper/typographyHelper";
-import DatePicker from "../components/common/datepicker";
+import CalendarApp from "../components/common/calendarapp";
 
 const Home: React.FC = () => {
 
@@ -33,7 +33,7 @@ const Home: React.FC = () => {
     <br></br>
     <CheckList width="250px"></CheckList>
     <br></br>
-    <DatePicker></DatePicker>
+    <CalendarApp/>
   </PageWrapper>
 );
 }
