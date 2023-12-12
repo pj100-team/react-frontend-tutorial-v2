@@ -38,7 +38,6 @@ const CalendarApp:React.FC<Props> = ({}) => {
 
     return (
         <div className="calendarapp-container">
-            <div className="background-container"></div>
             <div className="header-container">
                 <button onClick={handleSetPrevMonthandYear}>&lt;</button>
                 <label>{Months[thisMonth]} {thisYear}</label>

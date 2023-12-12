@@ -49,25 +49,6 @@ const Calendar:React.FC<Props> = ({ today, month, year}) => {
 
     const monthDates = (prevMonthDates.concat(thisMonthDates)).concat(nextMonthDates);
 
-    // split all the days into weeks
-    // const generateWeeks = (dates: number[]) => {
-    //     let daysInAWeek = 7;
-    //     let weekArray = [];
-
-    //     for (let i = 0; i < dates.length; i += daysInAWeek) {
-    //         weekArray.push(dates.slice(i, i+daysInAWeek));
-    //     }
-
-    //     return weekArray;
-    // }
-
-    // make each date clickable 
-    // const generateDateButtons = (date: number) => {
-    //     for (let i=0; i < 7; i++) { // 7 because we will run this over each weekArray
-    //         return (<button className="date" value={date}><p>{date}</p></button>)
-    //     }
-    // }
-
     const todayDate = today.getDate();
     const todayMonth = today.getMonth();
 
@@ -88,7 +69,6 @@ const Calendar:React.FC<Props> = ({ today, month, year}) => {
                 {Weekdays.map(day => 
                     <div className="weekday">{day}</div>)} {/* print each weekday out */}
             </div>  
-
             <div className="calendar">
                 {monthDates.map((date, index) => 
                     generateDateButtons(date, index))}
