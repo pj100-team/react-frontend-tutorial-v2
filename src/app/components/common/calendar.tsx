@@ -1,4 +1,5 @@
 /** @jsxImportSource @emotion/react */
+import { css } from "@emotion/react";
 import React from "react";
 import './calendar.css'
 
@@ -65,10 +66,14 @@ const Calendar:React.FC<Props> = ({ today, month, year}) => {
     return (
         <div className="calendar-container">
             <div className="datepicker-container"></div>
-            <div className="weekdays-container">
-                {Weekdays.map(day => 
-                    <div className="weekday">{day}</div>)} {/* print each weekday out */}
-            </div>  
+            <div
+            css={css`
+            `}>
+                <div className="weekdays-container">
+                    {Weekdays.map(day => 
+                        <div className="weekday">{day}</div>)} {/* print each weekday out */}
+                </div>  
+            </div>
             <div className="calendar">
                 {monthDates.map((date, index) => 
                     generateDateButtons(date, index))}
