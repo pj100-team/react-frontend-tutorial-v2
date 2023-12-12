@@ -32,7 +32,9 @@ const ListTile: React.FC<Props> = ({
                             margin-right: 40px;
                             margin-top: 10px;
                 `}><ListTileTitle>{title}</ListTileTitle></div>
-            <p css={css`text-align: right; margin-right: 10px;`}><CheckBox checked={checked} setChecked={setChecked}></CheckBox></p>
+            <p css={css`text-align: right; margin-right: 10px;`}>
+                <CheckBox checked={checked} setChecked={setChecked}></CheckBox>
+                </p>
             <div css={css`
                             margin-left: 10px;
                             margin-right: 40px;

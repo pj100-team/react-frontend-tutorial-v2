@@ -8,12 +8,13 @@ import Title from "../components/common/title";
 import PageWrapper from "../components/layout/pageWrapper";
 import { BackgroundColor } from "../view/helper/layoutHelper";
 import { FontColor } from "../view/helper/typographyHelper";
+import CalendarApp from "../components/common/calendarapp";
 
 const Home: React.FC = () => {
 
   // initialise parameters for the checkboxes
   const [checked1, setChecked1] = React.useState(false);
-  const [checked2, setChecked2] = React.useState(false);
+  const [checked2, setChecked2] = React.useState(true);
   // list tile
   const initialCheckListTile = false;
 
@@ -31,6 +32,8 @@ const Home: React.FC = () => {
               initialCheck={initialCheckListTile} />
     <br></br>
     <CheckList width="250px"></CheckList>
+    <br></br>
+    <CalendarApp/>
   </PageWrapper>
 );
 }
