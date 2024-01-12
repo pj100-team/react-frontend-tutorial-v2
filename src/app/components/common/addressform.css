@@ -14,7 +14,7 @@
     color: blue;
 }
 
-label:after {
+.address-form label:after {
     content: "必須";
     background-color: #ba4923;
     color: #fff;
@@ -29,6 +29,14 @@ label:after {
     text-align: center;
     border-radius: 5px;
     display: inline-block;
+}
+
+input:valid {
+    background-color: palegreen;
+}
+
+input:invalid {
+    background-color: lightpink;
 }
 
 button {

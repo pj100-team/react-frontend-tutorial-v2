@@ -35,7 +35,9 @@ const AddressForm:React.FC<Props> = () => {
             }
 
         } catch (error : unknown) { // any other errors that may arise
-            console.error(error);
+            console.error("There was an error: ", error);
+            const display_errmsg = "郵便番号が有効であることをお確認ください。"
+            setErrmsg(display_errmsg);
         }
     }
 
@@ -58,7 +60,7 @@ const AddressForm:React.FC<Props> = () => {
             <form>
                 <div className="form-content">
                     <label htmlFor="zipcode">郵便番号</label>
-                    <input onChange={handleZipcode} type="text" id="zipcode" name="zipcode"></input>
+                    <input onChange={handleZipcode} type="text" pattern="([0-9]{7}|[0-9]{3}-[0-9]{4})" placeholder="1234567" id="zipcode" name="zipcode"></input>
                     <button type="button" onClick={getAddress}>検索</button>
                     { errmsg ? <p css={css` color: red; `}>{errmsg}</p> : null }
                 </div>
