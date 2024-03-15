@@ -15,11 +15,13 @@ const AddressForm:React.FC<Props> = () => {
     console.log("Address Form Hello");
 
     const getAddress = async (): Promise<void> => {
+        console.log("outside try");
         try {
+            console.log("in try");
             const response = await axios.get("https://zipcloud.ibsnet.co.jp/api/search", {
                 params: { zipcode: zipcode },
             });
-            console.log(response); // check the structure of http responses: status, config, data, etc.
+            console.log("response: ", response); // check the structure of http responses: status, config, data, etc.
             
             if (response.data.status === 200) { // 正常時は 200
                 const respond_address = response.data.results[0].address1 + response.data.results[0].address2 + response.data.results[0].address3;
@@ -41,11 +43,10 @@ const AddressForm:React.FC<Props> = () => {
         }
     }
 
-
     const handleZipcode = (e: React.ChangeEvent<HTMLInputElement>): void => {
         setZipcode (e.currentTarget.value);
         console.log("zipcode: ", zipcode); //lmao it's really weird
-      };
+    };
 
     return (
         <div className="address-form"
@@ -60,9 +61,16 @@ const AddressForm:React.FC<Props> = () => {
             <form>
                 <div className="form-content">
                     <label htmlFor="zipcode">郵便番号</label>
-                    <input onChange={handleZipcode} type="text" pattern="([0-9]{7}|[0-9]{3}-[0-9]{4})" placeholder="1234567" id="zipcode" name="zipcode"></input>
+                    <input
+                        onChange={handleZipcode}
+                        type="text"
+                        pattern="([0-9]{7}|[0-9]{3}-[0-9]{4})"
+                        placeholder="1234567"
+                        id="zipcode"
+                        name="zipcode"
+                        required ></input>
                     <button type="button" onClick={getAddress}>検索</button>
-                    { errmsg ? <p css={css` color: red; `}>{errmsg}</p> : null }
+                    { errmsg ? <p css={css` color: red; `}>{errmsg}</p> : null } {/* conditional rendering */}
                 </div>
                 <div className="form-content">
                     <label htmlFor="address">住所</label>
@@ -71,7 +79,8 @@ const AddressForm:React.FC<Props> = () => {
                         type="text"
                         id="address"
                         name="address"
-                        value={address}></input>
+                        value={address}
+                        required ></input>
                 </div>
             </form>
             

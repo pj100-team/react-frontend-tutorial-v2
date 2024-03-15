@@ -45,9 +45,14 @@ button {
     border-radius: .2px;
     border: solid 1px black;
     transition-duration: .2s;
-  }
-  
-  button:hover {
+}
+
+button:hover {
     opacity: .7;
     cursor: pointer;
-  }
+
+}
+
+button:active {
+    background-color: yellow;
+}
