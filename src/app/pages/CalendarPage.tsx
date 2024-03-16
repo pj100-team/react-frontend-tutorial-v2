@@ -5,7 +5,6 @@ const CalendarPage: React.FC = () => {
     return (
         <CalendarApp/>
     );
-
 }
 
 export default CalendarPage;
