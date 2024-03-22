@@ -10,6 +10,7 @@ import { BackgroundColor } from "../view/helper/layoutHelper";
 import { FontColor } from "../view/helper/typographyHelper";
 import CalendarApp from "../components/common/calendarapp";
 import AddressForm from "../components/common/addressform";
+import MenuBar from "../components/common/menubar";
 
 const Home: React.FC = () => {
 
