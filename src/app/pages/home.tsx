@@ -9,6 +9,7 @@ import PageWrapper from "../components/layout/pageWrapper";
 import { BackgroundColor } from "../view/helper/layoutHelper";
 import { FontColor } from "../view/helper/typographyHelper";
 import CalendarApp from "../components/common/calendarapp";
+import AddressForm from "../components/common/addressform";
 
 const Home: React.FC = () => {
 
@@ -17,6 +18,8 @@ const Home: React.FC = () => {
   const [checked2, setChecked2] = React.useState(true);
   // list tile
   const initialCheckListTile = false;
+
+  console.log("At home");
 
   return (
 
@@ -34,6 +37,7 @@ const Home: React.FC = () => {
     <CheckList width="250px"></CheckList>
     <br></br>
     <CalendarApp/>
+    <AddressForm/>
   </PageWrapper>
 );
 }
