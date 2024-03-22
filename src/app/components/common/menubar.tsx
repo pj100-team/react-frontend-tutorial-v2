@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import { css } from "@emotion/react";
 import './menubar.css'
+import { Link, LinkProps, useMatch, useResolvedPath } from "react-router-dom"
 
 interface Props{
 }
@@ -9,13 +10,26 @@ interface Props{
 const MenuBar:React.FC<Props> = () => {
     return (
         <div className="menu">
-            <a href="/" className="site-title">Home</a>
+            <Link to="/" className="site-title">Home</Link>
             <ul>
-                <li><a href="/addressSearch">Address Search</a></li>
-                <li><a href="/calendar">Calendar</a></li>
-                <li><a href="/checklist">Checklist</a></li>
+                <CustomLink to="/calendar">Calendar</CustomLink>
+                <CustomLink to="/checklist">Checklist</CustomLink>
+                <CustomLink to="/addressSearch">Address Search</CustomLink>
             </ul>
         </div>
+    )
+}
+
+const CustomLink = ({ children, to, ...props } : LinkProps) => {
+    const resolvedPath = useResolvedPath(to);
+    const isActive = useMatch({ path: resolvedPath.pathname, end: true });
+
+    return (
+        <li className={isActive ? "active" : ""}>
+            <Link to={to} {...props}>
+                {children}
+            </Link>
+        </li>
     )
 }
 

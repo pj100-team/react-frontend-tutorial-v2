@@ -25,7 +25,6 @@ const Home: React.FC = () => {
   return (
 
   <PageWrapper color={BackgroundColor.SubBackground}>
-    <MenuBar/>
     <Title>React Tutorial</Title>
     <Caption>Aiful</Caption>
     <PlainText>Plain text</PlainText>
